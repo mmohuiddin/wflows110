@@ -8,8 +8,8 @@ jobs:
         run: |
           pwd
           ls -a
-          ehco $GITHUB_SHA
-          ehco $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
   display-wd-info-windows:
     runs-on: windows-latest
@@ -18,8 +18,8 @@ jobs:
         run: |
           pwd
           ls -a
-          ehco $GITHUB_SHA
-          ehco $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
 
 
