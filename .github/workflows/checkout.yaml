@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   checkout-and-display-files:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: List Files Before
         run: la -a
