@@ -1,15 +1,15 @@
-name: Stale Issue and PRS
-on: [issues]
-  #schedule:
+#name: Stale Issue and PRS
+#on: [issues]
+#  #schedule:
   #  - cron: "0 14 * * *"
   #  - cron: "0/5 * * * *"
 
-jobs:
-  stale:
-    runs-on: ubuntu_latest
-    steps:
-      - uses: actions/stale@v8
-        with:
-          stale-issue-message: "This is some message"
-          days-before-stale: 1
-          days-before-close: 5
+#jobs:
+#  stale:
+#    runs-on: ubuntu_latest
+#    steps:
+#      - uses: actions/stale@v8
+#        with:
+#          stale-issue-message: "This is some message"
+#          days-before-stale: 1
+#          days-before-close: 5
