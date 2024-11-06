@@ -1,8 +1,8 @@
 name: Stale Issue and PRS
-on:
-  schedule:
-    - cron: "0 14 * * *"
-    - cron: "0/5 * * * *"
+on: [issues]
+  #schedule:
+  #  - cron: "0 14 * * *"
+  #  - cron: "0/5 * * * *"
 
 jobs:
   stale:
