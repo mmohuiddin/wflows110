@@ -1,0 +1,16 @@
+name: Calling Reusable workflows
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Input description'
+        type: string
+        default: 'Mo'
+        required: false
+jobs:
+  calling-a-reusable-wf:
+    uses: mmohuiddin/workflows/.github/workflows/reusable.yaml@main
+    with: 
+      name: ${{inputs.name }}
+    secrets:
+      access-token: ${{ secrets }}
