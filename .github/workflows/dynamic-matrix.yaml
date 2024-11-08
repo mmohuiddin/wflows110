@@ -4,7 +4,7 @@ on:
     inputs:
       os :
         description: Operating system
-        default: "Windows-lates, ubuntu-lates"
+        default: "Windows-latest, ubuntu-latest"
         type: string
       node-version:
         description: Node Version
@@ -20,9 +20,9 @@ jobs:
           script: "return {os: context.payload.inputs['os'].split(','), 'node-version': context.payload.inputs['node-version'].split(',')}"
           result-encoding: json
       - run: echo '${{ steps.matrix-arrays.outputs.result }}'
-      - run: echo "step-out=value" >> $GITHUB_OUTOUT
+      - run: echo "step-output=value" >> $GITHUB_OUTOUT
         id: step-1
-      - run: echo "step-out=value 2" >> $GITHUB_OUTOUT
+      - run: echo "step-output=value 2" >> $GITHUB_OUTOUT
         id: step-2
       - run:
           echo '${{steps.step-1.outputs.step-output}}'
