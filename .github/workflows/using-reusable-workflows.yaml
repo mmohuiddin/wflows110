@@ -13,4 +13,4 @@ jobs:
     with: 
       name: ${{inputs.name }}
     secrets:
-      access-token: ${{ secrets }}
+      access-token: ${{ secrets.GITHUB_TOKEN }}
