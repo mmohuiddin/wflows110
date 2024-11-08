@@ -14,6 +14,12 @@ jobs:
   preparte-matix:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/github-script@v6
+        id: matrix-arrays
+        with:
+          script: "return {os: context.payload.inputs['os'].split(',') 'node-version': context.payload.inputs['node-version'].split(',')}"
+          result-encoding: json
+      - run: echo '${{ steps.matrix-arrays.outputs.result }}'
       - run: echo "step-out=value" >> $GITHUB_OUTOUT
         id: step-1
       - run: echo "step-out=value 2" >> $GITHUB_OUTOUT
