@@ -4,13 +4,19 @@ on:
     outputs:
       date:
         description: 'Date Value'
-        value: ${{ jobs.generate-output.outputs.date}}
+        value: ${{ jobs.generate-output.outputs.date }}
 
 jobs:
+  nested-workflow-call:
+    uses: mmohuiddin/workflows/.github/workflows/reusable.yaml@main
+    with: 
+      name: "Mo"
+    secrets:
+      access-token: ${{ secrets.GITHUB_TOKEN }} 
   generate-output:
     runs-on: ubuntu-latest
     outputs:
-      date: ${{ steps.date-step.outputs.date}}
+      date: ${{ steps.date-step.outputs.date }}
     steps:
       - run: echo "date=$(date)" >> $GITHUB_OUTPUT
         id: date-step
